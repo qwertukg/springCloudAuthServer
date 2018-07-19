@@ -9,9 +9,9 @@ app:
     username: cn=orcladmin
     password: unix11
   jwt:
-    filename: jwt.jks
-    password: mySecretKey
-    alias: jwt
+    filename: jwt.p12
+    password: 123456
+    alias: certAlias
     accessTokenValiditySeconds: 300
     refreshTokenValiditySeconds: 1800
 

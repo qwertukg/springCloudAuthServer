@@ -1,0 +1,17 @@
+server:
+  port: 9090
+
+app:
+  ldap:
+    url: ldap://137.134.56.215:3060/dc=altyn,dc=kz
+    base: cn=Users,cn=SSO
+    filter: (uid={0})
+    username: cn=orcladmin
+    password: unix11
+  jwt:
+    filename: jwt.p12
+    password: 123456
+    alias: certAlias
+    accessTokenValiditySeconds: 300
+    refreshTokenValiditySeconds: 1800
+

@@ -5,8 +5,8 @@
 
 	<groupId>kz.qwertukg</groupId>
 	<artifactId>springCloudAuthServer</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<version>1.0.0</version>
+	<packaging>war</packaging>
 
 	<name>springCloudAuthServer</name>
 	<description>Spring Cloud Auth Server with JWT payloaded by additional climes</description>
@@ -26,6 +26,11 @@
 	</properties>
 
 	<dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
 		<dependency>
 			<groupId>org.springframework.ldap</groupId>
 			<artifactId>spring-ldap-core</artifactId>
