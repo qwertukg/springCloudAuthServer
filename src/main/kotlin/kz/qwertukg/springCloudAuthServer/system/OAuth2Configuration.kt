@@ -40,7 +40,8 @@ class OAuth2Configuration(val authenticationManager: AuthenticationManager, val 
 
     @Bean
     fun jwtTokenEnhancer(): JwtAccessTokenConverter {
-        val keyStoreKeyFactory = KeyStoreKeyFactory(ClassPathResource(env.getProperty("app.jwt.filename")), env.getProperty("app.jwt.password").toCharArray())
+        val path = ClassPathResource(env.getProperty("app.jwt.filename"))
+        val keyStoreKeyFactory = KeyStoreKeyFactory(path, env.getProperty("app.jwt.password").toCharArray())
         return JwtAccessTokenConverter().apply { setKeyPair(keyStoreKeyFactory.getKeyPair(env.getProperty("app.jwt.alias"))) }
     }
 }

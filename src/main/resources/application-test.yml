@@ -1,5 +1,5 @@
 server:
-  port: 9090
+  port: 8080
 
 app:
   ldap:
@@ -9,7 +9,7 @@ app:
     username: cn=orcladmin
     password: unix11
   jwt:
-    filename: jwt.p12
+    filename: key.jks
     password: 123456
     alias: certAlias
     accessTokenValiditySeconds: 300
