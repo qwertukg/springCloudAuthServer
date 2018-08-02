@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: spring-cloud-auth-server
+  cloud:
+    config:
+      uri: http://137.134.23.181:8090
+
+management:
+  security:
+    enabled: false

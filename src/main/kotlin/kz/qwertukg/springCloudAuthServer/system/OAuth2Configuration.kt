@@ -5,6 +5,7 @@ import org.springframework.context.annotation.*
 import org.springframework.core.env.Environment
 import org.springframework.core.io.ClassPathResource
 import org.springframework.security.authentication.AuthenticationManager
+import org.springframework.security.oauth2.config.annotation.builders.ClientDetailsServiceBuilder
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer
 import org.springframework.security.oauth2.config.annotation.web.configuration.*
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer
@@ -16,7 +17,7 @@ import org.springframework.security.oauth2.provider.token.store.*
 class OAuth2Configuration(val authenticationManager: AuthenticationManager, val env: Environment) : AuthorizationServerConfigurerAdapter() {
     override fun configure(clients: ClientDetailsServiceConfigurer) {
         clients.inMemory()
-                .withClient("client")
+                .withClient("client_app")
                 .scopes("ALL")
                 .autoApprove(true)
                 .authorizedGrantTypes("refresh_token", "password")

@@ -18,9 +18,10 @@ class WebSecurityConfig(val env: Environment) : WebSecurityConfigurerAdapter() {
                 .and()
                     .authorizeRequests()
                     .antMatchers("/**").authenticated()
+/*                .and()
+                    .httpBasic()*/
     }
 
-    @Throws(Exception::class)
     override fun configure(auth: AuthenticationManagerBuilder) {
         auth.ldapAuthentication()
                 .userSearchBase(env.getProperty("app.ldap.base"))
@@ -30,7 +31,6 @@ class WebSecurityConfig(val env: Environment) : WebSecurityConfigurerAdapter() {
                 .url(env.getProperty("app.ldap.url"))
                 .managerDn(env.getProperty("app.ldap.username"))
                 .managerPassword(env.getProperty("app.ldap.password"))
-
     }
 
     @Bean
